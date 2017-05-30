@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="vendor/styles/railscasts.css">
-    <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 
     <script id="entry-template" type="text/x-handlebars-template">
       <entry class="clearfix" data-author="{{author}}" data-category="{{category}}">
@@ -24,19 +23,6 @@
         <section class="entry-body">{{{body}}}</section>
         <a href="#" class="read-on">Read on &rarr;</a>
       </entry>
-    </script>
-
-    <script id="repo-template" type="text/x-handlebars-template">
-      <li>
-        <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
-        <p>Description: {{description}}</p>
-        <p>Language: {{language}}</p>
-        <p>Created: {{created_at}}</p>
-        <p>Last updated: {{updated_at}}</p>
-        {{#if watchers_count}}
-          <p>{{watchers_count}} watching this repo</p>
-        {{/if}}
-      </li>
     </script>
   </head>
   <body>
@@ -52,40 +38,11 @@
         <ul>
           <li class="tab" data-content="entries"><a href="/" class="icon-home"> Home</a></li>
           <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
-          <li><a href="http://twitter.com/brookr" target="_blank" class="icon-twitter3"> Twitter</a></li>
-          <li><a href="http://github.com/brookr" target="_blank" class="icon-github"> GitHub</a></li>
         </ul>
       </nav>
     </header>
     <main>
-    <!--   <section id="entries" class="tab-content">
-        <div>
-          <ul id="filters">
-            <li>
-              <select id="author-filter">
-                <option value="">-- Filter by Authors --</option>
-              </select>
-            </li>
-            <li>
-              <select id="category-filter">
-                <option value="">-- Filter by Categories --</option>
-              </select>
-            </li>
-          </ul>
-        </div>
-      </section> -->
       <section id="about" class="tab-content">
-        <header>
-          Welcome to my Blog
-        </header>
-        <section>
-          <h1>Some of my intrests:</h1>
-          <ul>
-            <li>Coding</li>
-            <li>Sharing what I've learned</li>
-            <li>Hanging with my family</li>
-          </ul>
-        </section>
       </section>
     </main>
     <footer>
@@ -95,15 +52,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
     <script src="/vendor/scripts/page.js"></script>
-
     <script src="/scripts/models/entry.js"></script>
     <script src="/scripts/views/entryView.js"></script>
     <script src="/scripts/controllers/entryController.js"></script>
-
-    <script src="/scripts/models/repo.js"></script>
-    <script src="/scripts/views/repoView.js"></script>
     <script src="/scripts/controllers/aboutController.js"></script>
-
     <script src="/scripts/controllers/routes.js"></script>
   </body>
 </html>
