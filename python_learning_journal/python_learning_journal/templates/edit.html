@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JourNull</title>
+    <link rel="stylesheet" href="/vendor/styles/normalize.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <script id="author-template" type="text/x-handlebars-template">
+      <li><strong>{{name}}</strong>: {{numWords}} words written</li>
+    </script>
+  </head>
+  <body>
+    <header class="site-header clearfix">
+      <section class="heading-group-h1 pull-left">
+        <h1>
+          JourNull
+        </h1>
+        <h2>EditTrees</h2>
+      </section>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+        <ul>
+          <li class="tab"><a href="entry.html" class="icon-home"></a>Blog</li>
+          <li class="tab"><a href="edit.html"></a>Stats</li>
+          <li class="tab"><a href="new.html">New Entry</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="clearfix">
+      <h1>Blog Stats</h1>
+      <section id="blog-stats">
+        <dt>Total entries:</dt> <dd class="entries"></dd>
+        <dt>Total words:</dt> <dd class="words"></dd>
+        <h2>Author Stats</h2>
+        <p><em>Details on who is writing, and how much writing they are doing...</em></p>
+        <ul class="author-stats">
+        </ul>
+      </section>
+    </main>
+    <footer>
+      
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="/vendor/scripts/handlebars.js"></script>
+    <script src="/scripts/models/entry.js"></script>
+    <script src="/scripts/views/editView.js"></script>
+  </body>
+</html>
