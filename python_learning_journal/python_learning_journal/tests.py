@@ -19,35 +19,61 @@ def detail_view_response():
 
 
 @pytest.fixture
-def create_view():
+def create_view_response():
     """Return a create view response."""
     from python_learning_journal.views.default import create_view
     request = testing.DummyRequest()
     return create_view(request)
 
 
+@pytest.fixture
+def update_view_response():
+    """Return a update view response."""
+    from python_learning_journal.views.default import update_view
+    request = testing.DummyRequest()
+    return update_view(request)
 
 
+def test_list_view_returns_response_given_request(list_view_response):
+    """Assert if list view returns a valid response."""
+    assert isinstance(list_view_response, Response)
 
-# @pytest.fixture
-# def home_response():
-#     """Return a response from the home page."""
-#     from expense_tracker.views.default import home_page
-#     request = testing.DummyRequest()
-#     response = home_page(request)
-#     return response
-#
-#
-# def test_home_view_returns_response_given_request(home_response):
-#     """Home view returns a Response object when given a request."""
-#     assert isinstance(home_response, Response)
-#
-#
-# def test_home_view_is_good(home_response):
-#     """Home view response comes with a status 200 OK."""
-#     assert home_response.status_code == 200
-#
-#
+
+def test_detail_view_returns_response_given_request(detail_view_response):
+    """Assert if detail view returns a valid response."""
+    assert isinstance(detail_view_response, Response)
+
+
+def test_create_view_returns_response_given_request(create_view_response):
+    """Assert if create view returns a valid response."""
+    assert isinstance(create_view_response, Response)
+
+
+def test_update_view_returns_response_given_request(update_view_response):
+    """Assert if update view returns a valid response."""
+    assert isinstance(update_view_response, Response)
+
+
+def test_list_view_is_good(list_view_response):
+    """Assert that list view response returns a status 200 OK."""
+    assert list_view_response.status_code == 200
+
+
+def test_detail_view_is_good(detail_view_response):
+    """Assert that detail view response returns a status 200 OK."""
+    assert detail_view_response.status_code == 200
+
+
+def test_create_view_is_good(create_view_response):
+    """Assert that create view response returns a status 200 OK."""
+    assert create_view_response.status_code == 200
+
+
+def test_update_view_is_good(update_view_response):
+    """Assert that update view response returns a status 200 OK."""
+    assert update_view_response.status_code == 200
+
+
 # def test_home_view_returns_proper_content(home_response):
 #     """Home view response includes the content we added."""
 #     expected_text = '<h1 style="color: blue;">Hey, this is HTML in some external file.</h1>'
