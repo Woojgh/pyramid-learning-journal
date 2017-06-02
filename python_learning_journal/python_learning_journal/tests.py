@@ -74,7 +74,67 @@ def test_update_view_is_good(update_view_response):
     assert update_view_response.status_code == 200
 
 
-# def test_home_view_returns_proper_content(home_response):
-#     """Home view response includes the content we added."""
-#     expected_text = '<h1 style="color: blue;">Hey, this is HTML in some external file.</h1>'
-#     assert expected_text in home_response.text
+def test_list_view_returns_proper_content(list_view_response):
+    """Assert that List view response has proper contnent."""
+    expected_text = """<nav class="main-nav">
+        <div class="icon-menu"></div>
+        <ul>
+          <li class="tab" data-content="entries"><a href="/" class="icon-home"> Home</a></li>
+          <li class="tab"><a href="/journal/new-entry">New Entry</a></li>
+          <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
+        </ul>
+      </nav>"""
+    assert expected_text in list_view_response.text
+
+
+def test_detail_vieiw_returns_proper_content(detail_view_response):
+    """Assert that Detail view response has proper content."""
+    expected_text = """<nav class="main-nav">
+        <div class="icon-menu"></div>
+        <ul>
+          <li class="tab" data-content="entries"><a href="/" class="icon-home"> Home</a></li>
+          <li class="tab"><a href="/journal/new-entry">New Entry</a></li>
+          <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
+        </ul>
+      </nav>"""
+    assert expected_text in detail_view_response.text
+
+
+def test_create_view_returns_proper_content(create_view_response):
+    """Assert that create view has proper content."""
+    expected_text = """<section id="write" class="tab-content">
+        <h1>New Entrees</h1>
+        <form action="#" id="new-form">
+          <label>
+            <input type="text" id="entry-title" placeholder="Entry title" required>
+          </label>
+          <textarea id="entry-body" rows="8" cols="40" required></textarea>
+          <label>
+            <input type="text" id="entry-author" placeholder="Author Name" required>
+          </label>
+          <label>
+            <input type="text" id="entry-author-url" placeholder="Author's URL" required>
+          </label>
+          <label>
+            <input type="text" id="entry-category" placeholder="Category" required>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </section>"""
+    assert expected_text in create_view_response.text
+
+
+def test_update_view_returns_proper_content(update_view_response):
+    """Asser that update view has proper content."""
+    expected_text = """<main class="clearfix">
+      <h1>Blog Stats</h1>
+      <section id="blog-stats">
+        <dt>Total entries:</dt> <dd class="entries"></dd>
+        <dt>Total words:</dt> <dd class="words"></dd>
+        <h2>Author Stats</h2>
+        <p><em>Details on who is writing, and how much writing they are doing...</em></p>
+        <ul class="author-stats">
+        </ul>
+      </section>
+    </main>"""
+    assert expected_text in update_view_response.text
