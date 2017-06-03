@@ -1,6 +1,10 @@
 appnope==0.1.0
+certifi==2017.4.17
+chardet==3.0.3
 decorator==4.0.11
+heroku==0.1.4
 hupper==1.0
+idna==2.5
 ipython==6.1.0
 ipython-genutils==0.2.0
 jedi==0.10.2
@@ -20,13 +24,17 @@ pyramid-ipython==0.2
 pyramid-jinja2==2.7
 pyramid-mako==1.0.2
 pyramid-tm==2.0
+python-dateutil==1.5
+-e git+https://github.com/Woojgh/pyramid-learning-journal.git@5a5e295cf7a68f0069af5ffc8159e8277e031284#egg=python_learning_journal&subdirectory=python_learning_journal
 repoze.lru==0.6
+requests==2.17.3
 simplegeneric==0.8.1
 six==1.10.0
 SQLAlchemy==1.1.10
 traitlets==4.3.2
 transaction==2.1.2
 translationstring==1.3
+urllib3==1.21.1
 venusian==1.1.0
 waitress==1.0.2
 wcwidth==0.1.7
