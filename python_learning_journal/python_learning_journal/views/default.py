@@ -1,34 +1,26 @@
 """"I don't know what I'm doing."""
-from pyramid.response import Response
+from pyramid.view import view_config
 import io
 import os
 
 
 HERE = os.path.dirname(__file__)
 
+@view_config(route_name='list_view', renderer='../templates/listing.jinja2')
 def list_view(request):
-    with io.open(os.path.join(HERE, '../templates/entry.html')) as the_file:
-        imported_html = the_file.read()
-
-    return Response(imported_html)
+    return {}
 
 
+@view_config(route_name='detail_view', renderer='../templates/detail.jinja2')
 def detail_view(request):
-    with io.open(os.path.join(HERE, '../templates/entry.html')) as the_file:
-        imported_html = the_file.read()
-
-    return Response(imported_html)
+    return {}
 
 
+@view_config(route_name='create_view', renderer='../templates/create.jinja2')
 def create_view(request):
-    with io.open(os.path.join(HERE, '../templates/new.html')) as the_file:
-        imported_html = the_file.read()
-
-    return Response(imported_html)
+    return {}
 
 
+@view_config(route_name='update_view', renderer='../templates/update.jinja2')
 def update_view(request):
-    with io.open(os.path.join(HERE, '../templates/edit.html')) as the_file:
-        imported_html = the_file.read()
-
-    return Response(imported_html)
+    return {}
