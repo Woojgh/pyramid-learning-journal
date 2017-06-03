@@ -1,4 +1,15 @@
 {% extends "layout.jinja2" %}
 {% block body %}
-    <p>This is where we put list_view stuff.</p>
+    {% if journal_entries %}
+            {% for entry in journal_entries %}
+                <article>
+                    <h2><a href="{{ request.route_url('detail_view', id=entry.id) }}"></a></h2>
+                    <hr />
+                    <p>Created <strong>{{ entry.creation_date }}</strong></p>
+                    <p>{{ entry.body }}</p>
+                </article>
+            {% endfor %}
+        {% else %}
+            <p>You have no journal entries to list.</p>
+        {% endif %}
 {% endblock %}
