@@ -54,6 +54,7 @@ def create_view(request):
 
     return {}
 
+
 @view_config(route_name="edit", renderer="../templates/edit_entry.jinja2")
 def update_view(request):
     '''View for editing an entry.'''
