@@ -13,16 +13,20 @@ requires = [
     'pyramid_jinja2',
     'pyramid_debugtoolbar',
     'pyramid_tm',
+    'ipython',
+    'pyramid_ipython',
     'SQLAlchemy',
     'transaction',
     'zope.sqlalchemy',
     'waitress',
+    'psycopg2'
 ]
 
 tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest',
     'pytest-cov',
+    'tox'
 ]
 
 setup(
@@ -48,11 +52,11 @@ setup(
     },
     install_requires=requires,
     entry_points={
-        'paste.app_factory': [
+         'paste.app_factory': [
             'main = python_learning_journal:main',
-        ],
-        'console_scripts': [
-            'initialize_python_learning_journal_db = python_learning_journal.scripts.initializedb:main',
-        ],
+         ],
+         'console_scripts': [
+            'initializedb = python_learning_journal.scripts.initializedb:main',
+         ],
     },
 )
