@@ -1,4 +1,8 @@
 {% extends "layout.jinja2" %}
 {% block body %}
-    <p>This is where we put detail_view stuff.</p>
+    <article>
+        <p>id: {{ entry.id }}</p>
+        <h1>{{ entry.title }}</h1><p>{{ entry.creation_date }}</p>
+        <p>{{ entry.body }}</p>
+    </article>
 {% endblock %}
