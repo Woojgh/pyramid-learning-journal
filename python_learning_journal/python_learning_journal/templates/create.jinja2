@@ -1,11 +1,17 @@
 {% extends "layout.jinja2" %}
 {% block body %}
-    <p></p>
     <h1>Create New Journal Entry</h1>
-    <form>
-        Title:<br>
-        <input type="text"><br><br>
-        Body:<br>
-        <input type="text"><br>
+    <form method="POST">
+        <ul>
+            <li>
+                <label for="title">Title: </label>
+                <input type="text" name="title">
+            </li>
+            <li>
+                <label for="body">Body: </label>
+                <textarea name="body"></textarea>
+            </li>
+        </ul>
+        <input type="submit" value="Submit Journal Entry">
     </form>
 {% endblock %}

@@ -1,7 +1,11 @@
 """Create views and route them to jinja2 files."""
 from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPNotFound
+from pyramid.httpexceptions import (
+    HTTPNotFound,
+    HTTPFound
+)
 from python_learning_journal.models import Entry
+import datetime
 import os
 
 
@@ -112,7 +116,19 @@ def detail_view(request):
 
 @view_config(route_name='create_view', renderer='../templates/create.jinja2')
 def create_view(request):
-    """No data is needed."""
+    """View for new listing route."""
+    if request.method == "POST" and request.POST:
+        new_entry = Entry(
+            title=request.POST['title'],
+            body=request.POST['body'],
+            creation_date=datetime.datetime.now()
+        )
+
+        request.dbsession.add(new_entry)
+        return HTTPFound(
+            location=request.route_url('list_view')
+        )
+
     return {}
 
 

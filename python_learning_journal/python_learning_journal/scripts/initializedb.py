@@ -1,6 +1,7 @@
 import os
 import sys
 import transaction
+import datetime
 
 from pyramid.paster import (
     get_appsettings,
@@ -130,10 +131,9 @@ def main(argv=sys.argv):
 
         for entry in JOURNAL_ENTRIES_DICT:
             new_entry = Entry(
-                id=entry['id'],
                 title=entry['title'],
                 body=entry['body'],
-                creation_date=entry['creation_date']
+                creation_date=datetime.datetime.now()
             )
             entries.append(new_entry)
 
