@@ -46,16 +46,6 @@ def main(argv=sys.argv):
 
     with transaction.manager:
         dbsession = get_tm_session(session_factory, transaction.manager)
-        entries = []
-
-        for entry in JOURNAL_ENTRIES_DICT:
-            new_entry = Entry(
-                id=entry['id'],
-                title=entry['title'],
-                body=entry['body'],
-                creation_date=entry['creation_date']
-            )
-            entries.append(new_entry)
 
         models = []
         for item in JOURNAL_ENTRIES:
