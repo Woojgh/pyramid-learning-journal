@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  </head>
-  <body>
-    <header class="site-header clearfix">
-      <section class="heading-group-h1">
-        <h1>JourNull</h1>
-        <h2>EntTrees</h2>
-      </section>
-      <nav class="main-nav">
-        <div class="icon-menu"></div>
-        <ul>
-          <li class="tab" data-content="entries"><a href="/" class="icon-home"> Home</a></li>
-          <li class="tab"><a href="/journal/new-entry">New Entry</a></li>
-          <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section id="content" class="tab-content">
-        {% block body %}
-        {% endblock %}
-      </section>
-    </main>
-    <footer>
-    </footer>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>Learning Journal | {{ page }}</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>Miguel Pena's Journal Entries</h1>
+            </div>
+            <div>
+                <a href="{{ request.route_url('list') }}"><button>Home</button></a>
+                <a href="{{ request.route_url('new') }}"><button>New</button></a>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+        <footer>
+            <!-- insert GitHub, LinkedIn, and Twitter icons here with links to those pages. -->
+        </footer>
+    </body>
 </html>
