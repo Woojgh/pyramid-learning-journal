@@ -17,6 +17,7 @@ requires = [
     'transaction',
     'zope.sqlalchemy',
     'waitress',
+    'psycopg2'
 ]
 
 tests_require = [
@@ -52,7 +53,7 @@ setup(
             'main = python_learning_journal:main',
         ],
         'console_scripts': [
-            'initialize_python_learning_journal_db = python_learning_journal.scripts.initializedb:main',
+            'initializedb = python_learning_journal.scripts.initializedb:main',
         ],
     },
 )
