@@ -1,12 +1,5 @@
+"""Creating functions for view callables"""
 
-"""Create views and route them to jinja2 files."""
-from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPNotFound
-from python_learning_journal.models import Entry
-import os
-
-
-'''Creating functions for view callables'''
 from pyramid.view import view_config
 from pyramid.httpexceptions import (
     HTTPNotFound,
@@ -65,7 +58,7 @@ def create_view(request):
 
 @view_config(route_name="edit", renderer="../templates/edit_entry.jinja2")
 def update_view(request):
-    '''View for editing an entry.'''
+    """View for editing an entry."""
     the_id = int(request.matchdict['id'])
     entry = request.dbsession.query(Entry).get(the_id)
     if not entry:
