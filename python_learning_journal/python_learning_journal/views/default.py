@@ -105,19 +105,33 @@ def detail_view(request):
     """Detailed view for one journal entry based on it's id."""
     the_id = int(request.matchdict['id'])
     entry = request.dbsession.query(Entry).get(the_id)
-    if entry:
+
+    if not entry:
+        raise HTTPNotFound
+
+    if request.method == 'GET':
         return {
             'entry': entry
         }
 
-    else:
-        raise HTTPNotFound
+    if request.method == 'POST':
+        return HTTPFound(
+            location=request.route_url('update_view', id=entry.id)
+        )
+
+    return {}
 
 
 @view_config(route_name='create_view', renderer='../templates/create.jinja2')
 def create_view(request):
     """View for new listing route."""
-    if request.method == "POST" and request.POST:
+    if request.method == "POST":
+        if not request.POST['title'] or not request.POST['body']:
+            return {
+                'title': request.POST['title'],
+                'body': request.POST['body']
+            }
+
         new_entry = Entry(
             title=request.POST['title'],
             body=request.POST['body'],
@@ -138,10 +152,21 @@ def update_view(request):
     the_id = int(request.matchdict['id'])
     entry = request.dbsession.query(Entry).get(the_id)
 
-    if entry:
+    if not entry:
+        raise HTTPNotFound
+
+    if request.method == 'GET':
         return {
-            'entry': entry
+            'title': entry.title,
+            'body': entry.body
         }
 
-    else:
-        raise HTTPNotFound
+    if request.method == 'POST':
+        entry.title = request.POST['title']
+        entry.body = request.POST['body']
+
+        return HTTPFound(
+            location=request.route_url('detail_view', id=entry.id)
+        )
+
+    return {}
