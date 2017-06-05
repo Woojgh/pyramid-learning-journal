@@ -1,5 +1,4 @@
 """Creating functions for view callables"""
-
 from pyramid.view import view_config
 from pyramid.httpexceptions import (
     HTTPNotFound,
