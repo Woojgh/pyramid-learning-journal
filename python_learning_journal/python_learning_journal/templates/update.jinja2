@@ -1,0 +1,11 @@
+{% extends "layout.jinja2" %}
+{% block body %}
+    <p>id: {{ entry.id }}</p>
+    <h1>Edit {{ entry.title }}</h1>
+    <form>
+        Title:<br>
+        <input type="text" value="{{ entry.title }}"><br><br>
+        Body:<br>
+        <input type="text" value="{{ entry.body }}"><br>
+    </form>
+{% endblock %}

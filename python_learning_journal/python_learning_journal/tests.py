@@ -14,6 +14,7 @@
 #     return response
 
 
+
 # def test_home_view_returns_response_given_request(list_response):
 #     """Home view returns a Response object when given a request."""
 #     assert "entry" in list_response

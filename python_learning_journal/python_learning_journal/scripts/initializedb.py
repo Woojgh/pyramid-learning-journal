@@ -40,11 +40,22 @@ def main(argv=sys.argv):
     engine = get_engine(settings)
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
+
 # ==== The below is not needed but will get your server running ====
     session_factory = get_session_factory(engine)
 
     with transaction.manager:
         dbsession = get_tm_session(session_factory, transaction.manager)
+        entries = []
+
+        for entry in JOURNAL_ENTRIES_DICT:
+            new_entry = Entry(
+                id=entry['id'],
+                title=entry['title'],
+                body=entry['body'],
+                creation_date=entry['creation_date']
+            )
+            entries.append(new_entry)
 
         models = []
         for item in JOURNAL_ENTRIES:

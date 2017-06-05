@@ -5,6 +5,7 @@ import zope.sqlalchemy
 
 # import or define all models here to ensure they are attached to the
 # Base.metadata prior to any initialization routines
+
 from python_learning_journal.models.entries import Entry
 
 # run configure_mappers after defining all of the models to ensure

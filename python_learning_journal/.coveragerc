@@ -1,5 +1,6 @@
 [run]
 source = python_learning_journal
+
 omit = 
     python_learning_journal/test*
     python_learning_journal/models/*
@@ -8,6 +9,7 @@ omit =
     python_learning_journal/views/__init__.py
     python_learning_journal/routes.py
     python_learning_journal/__init__.py
+
 
 [report]
 show_missing = True

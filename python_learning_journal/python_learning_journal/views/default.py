@@ -1,3 +1,11 @@
+
+"""Create views and route them to jinja2 files."""
+from pyramid.view import view_config
+from pyramid.httpexceptions import HTTPNotFound
+from python_learning_journal.models import Entry
+import os
+
+
 '''Creating functions for view callables'''
 from pyramid.view import view_config
 from pyramid.httpexceptions import (
