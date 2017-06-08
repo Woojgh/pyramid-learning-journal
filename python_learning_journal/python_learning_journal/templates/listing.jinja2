@@ -1,5 +1,8 @@
 {% extends "layout.jinja2" %}
 {% block body %}
+    {% if 'woojgh' in session %} 
+        <li class="tab"><a href="/journal/new-entry">New Entry</a></li>
+    {% endif %}     
     {% if journal_entries %}
             {% for entry in journal_entries %}
                 <article>

@@ -6,7 +6,10 @@ from pyramid.httpexceptions import (
 )
 from python_learning_journal.models import Entry
 import datetime
-import os
+from pyramid.security import remember, forget
+from python_learning_journal.security import check_credentials
+from pyramid.security import NO_PERMISSION_REQUIRED
+
 
 @view_config(route_name='list_view', renderer='../templates/listing.jinja2')
 def list_view(request):
@@ -37,7 +40,7 @@ def detail_view(request):
     return {}
 
 
-@view_config(route_name='create_view', renderer='../templates/create.jinja2')
+@view_config(route_name='create_view', renderer='../templates/create.jinja2', permission='secret')
 def create_view(request):
     """View for new listing route."""
     if request.method == "POST":
@@ -61,7 +64,7 @@ def create_view(request):
     return {}
 
 
-@view_config(route_name='update_view', renderer='../templates/update.jinja2')
+@view_config(route_name='update_view', renderer='../templates/update.jinja2', permission='secret')
 def update_view(request):
     """View to make changes to a journal entry."""
     the_id = int(request.matchdict['id'])
@@ -86,3 +89,24 @@ def update_view(request):
         )
 
     return {}
+
+
+@view_config(route_name='login', renderer='../templates/login.jinja2', permission=NO_PERMISSION_REQUIRED)
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        if check_credentials(username, password):
+            print('checking monkey creds')
+            headers = remember(request, username)
+            return HTTPFound(
+                location=request.route_url('list_view'), headers=headers)
+        else:
+            return {'error': 'Bad request'}
+    return {}
+
+
+@view_config(route_name='logout')
+def logout(request):
+    headers = forget(request)
+    return HTTPFound(request.route_url('list_view'), headers=headers)
