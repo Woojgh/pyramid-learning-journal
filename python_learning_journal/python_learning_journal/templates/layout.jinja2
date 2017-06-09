@@ -17,12 +17,12 @@
       </nav>
     </header>
     <main>
-      <section id="content" class="tab-content">
-        {% block body %}
-        {% endblock %}
-      </section>
       <section id="create" class="create">
         {% block create %}
+        {% endblock %}
+      </section>
+      <section id="content" class="tab-content">
+        {% block body %}
         {% endblock %}
       </section>
     </main>
