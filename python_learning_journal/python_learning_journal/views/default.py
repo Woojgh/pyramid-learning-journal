@@ -113,7 +113,7 @@ def logout(request):
     return HTTPFound(request.route_url('list_view'), headers=headers)
 
 
-# @view_config(route_name='api_journal_list', renderer='json')
-# def api_list(request):
-#     entries = request.dbsession.query(Entry).all()
-#     return {'entries': entries}
+@view_config(route_name='api_journal_list', renderer='json')
+def api_list(request):
+    entries = request.dbsession.query(Entry).all()
+    return {'entries': entries}

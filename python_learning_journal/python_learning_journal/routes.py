@@ -7,4 +7,4 @@ def includeme(config):
     config.add_route('login_view', '/login')
     config.add_route('logout_view', '/logout')
 
-    # config.add_route('all_exspenses', '/api/v1/journals')
+    config.add_route('api_journal_list', '/api/v1/journals')

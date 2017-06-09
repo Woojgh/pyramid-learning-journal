@@ -15,10 +15,10 @@ class Entry(Base):
     body = Column(Unicode)
     creation_date = Column(DateTime)
 
-    # def to_json(self):
-    #     output = {}
-    #     output['id'] = self.id
-    #     output['title'] = self.title
-    #     output['body'] = self.body
-    #     output['creation_date'] = self.creation_date
-    #     return output
+    def to_json(self):
+        output = {}
+        output['id'] = self.id
+        output['title'] = self.title
+        output['body'] = self.body
+        output['creation_date'] = self.creation_date
+        return output
