@@ -21,7 +21,6 @@ from python_learning_journal.entry.data import JOURNAL_ENTRIES_DICT
 import datetime
 
 
-
 def usage(argv):
     cmd = os.path.basename(argv[0])
     print('usage: %s <config_uri> [var=value]\n'
