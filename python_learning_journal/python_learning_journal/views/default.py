@@ -8,7 +8,7 @@ from python_learning_journal.models import Entry
 import datetime
 from pyramid.security import remember, forget
 from python_learning_journal.security import check_credentials
-import twitter
+# import twitter
 
 @view_config(route_name='list_view', renderer='../templates/listing.jinja2', require_csrf=False)
 def list_view(request):
