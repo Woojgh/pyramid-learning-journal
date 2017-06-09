@@ -115,5 +115,6 @@ def logout(request):
 
 @view_config(route_name='api_journal_list', renderer='json')
 def api_list(request):
-    entries = request.dbsession.query(Entry).all()
+    query = request.dbsession.query(Entry).all()
+    entries = [entries.to_json() for entry in query]
     return {'entries': entries}
