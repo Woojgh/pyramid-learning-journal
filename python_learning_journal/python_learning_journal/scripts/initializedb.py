@@ -17,7 +17,7 @@ from ..models import (
     get_tm_session,
     )
 from ..models import Entry
-from python_learning_journal.entry.data import JOURNAL_ENTRIES_DICT
+from entry.data import JOURNAL_ENTRIES_DICT
 from datetime import datetime
 
 
