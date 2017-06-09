@@ -16,19 +16,19 @@ def list_view(request):
     journal_entries = request.dbsession.query(Entry).all()
     return {"journal_entries": journal_entries, 'authenticated': request.authenticated_userid}
 
-    if request.method == "POST":
+    # if request.method == "POST":
 
-        api = twitter.Api(consumer_key='consumer_key',
-                          consumer_secret='consumer_secret',
-                          access_token_key='access_token',
-                          access_token_secret='access_token_secret')
+    #     api = twitter.Api(consumer_key='consumer_key',
+    #                       consumer_secret='consumer_secret',
+    #                       access_token_key='access_token',
+    #                       access_token_secret='access_token_secret')
 
-        request.dbsession.add(api)
-        return HTTPFound(
-            location=request.route_url('list_view')
-        )
+    #     request.dbsession.add(api)
+    #     return HTTPFound(
+    #         location=request.route_url('list_view')
+    #     )
 
-    return {}
+    # return {}
 
 
 @view_config(route_name='detail_view', renderer='../templates/detail.jinja2', require_csrf=False)
