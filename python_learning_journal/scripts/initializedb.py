@@ -18,7 +18,7 @@ from ..models import (
     )
 from ..models import Entry
 from python_learning_journal.entry.data import JOURNAL_ENTRIES_DICT
-import datetime
+from datetime import datetime
 
 
 def usage(argv):
@@ -50,8 +50,7 @@ def main(argv=sys.argv):
             new_entry = Entry(
                 title=entry['title'],
                 body=entry['body'],
-                creation_date=datetime.datetime.now()
+                creation_date=datetime.now(),
             )
             entries.append(new_entry)
-
         dbsession.add_all(entries)
