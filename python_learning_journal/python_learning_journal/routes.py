@@ -4,5 +4,7 @@ def includeme(config):
     config.add_route('detail_view', '/journal/{id:\d+}')
     config.add_route('create_view', '/journal/new-entry')
     config.add_route('update_view', '/journal/{id:\d+}/edit-entry')
-    config.add_route('login', '/login')
-    config.add_route('logout', '/logout')
+    config.add_route('login_view', '/login')
+    config.add_route('logout_view', '/logout')
+
+    # config.add_route('all_exspenses', '/api/v1/journals')

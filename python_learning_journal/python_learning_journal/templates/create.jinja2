@@ -1,7 +1,7 @@
 {% extends "layout.jinja2" %}
 {% block body %}
-    <h1>Create New Journal Entry</h1>
     <input type="hidden" name="csrf_token" value="{{ request.session.get_csrf_token() }}" />
+    <h1>Create New Journal Entry</h1>
     <form method="POST">
         <ul>
             <li>
