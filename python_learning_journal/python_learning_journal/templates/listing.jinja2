@@ -5,7 +5,6 @@
             <li class="tab"><a href="/journal/new-entry">New Entry</a></li>
             <li class="tab"><a href="/logout">Logout</a></li>
         </ul>
-        <input type="hidden" name="csrf_token" value="{{ request.session.get_csrf_token() }}" />
         <h1>Create New Journal Entry</h1>
         <form method="POST">
             <ul>
