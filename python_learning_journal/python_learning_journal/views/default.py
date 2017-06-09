@@ -8,13 +8,28 @@ from python_learning_journal.models import Entry
 import datetime
 from pyramid.security import remember, forget
 from python_learning_journal.security import check_credentials
-
+import twitter
 
 @view_config(route_name='list_view', renderer='../templates/listing.jinja2', require_csrf=False)
 def list_view(request):
     """View for the main listing page."""
     journal_entries = request.dbsession.query(Entry).all()
     return {"journal_entries": journal_entries, 'authenticated': request.authenticated_userid}
+
+    if request.method == "POST":
+
+        api = twitter.Api(consumer_key='CONSUMER_KEY',
+                          consumer_secret='CONSUMER_SECRET',
+                          access_token_key='SCCESS_TOKEN',
+                          access_token_secret='access_token_secret')
+        print(api.VerifyCredentials())
+
+        request.dbsession.add(api)
+        return HTTPFound(
+            location=request.route_url('list_view')
+        )
+
+    return {}
 
 
 @view_config(route_name='detail_view', renderer='../templates/detail.jinja2', require_csrf=False)
