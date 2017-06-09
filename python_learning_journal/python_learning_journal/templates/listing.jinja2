@@ -34,7 +34,9 @@
             </li>
         </ul>
         <input type="submit" value="Submit Journal Entry">
-        
+        {% if consumer_key %}
+            <input type="submit" value="Tweet IT!">
+        {% endif %}
     </form>
     {% endif %}
 {% endblock %}

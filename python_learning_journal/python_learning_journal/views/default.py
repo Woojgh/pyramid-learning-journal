@@ -18,11 +18,10 @@ def list_view(request):
 
     if request.method == "POST":
 
-        api = twitter.Api(consumer_key='CONSUMER_KEY',
-                          consumer_secret='CONSUMER_SECRET',
-                          access_token_key='SCCESS_TOKEN',
+        api = twitter.Api(consumer_key='consumer_key',
+                          consumer_secret='consumer_secret',
+                          access_token_key='access_token',
                           access_token_secret='access_token_secret')
-        print(api.VerifyCredentials())
 
         request.dbsession.add(api)
         return HTTPFound(
