@@ -5,8 +5,6 @@ from pyramid.security import Everyone, Authenticated
 from pyramid.security import Allow
 from passlib.apps import custom_app_context as context
 from pyramid.session import SignedCookieSessionFactory
-from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
 
 
 class MyRoot(object):
@@ -32,7 +30,7 @@ def check_credentials(username, password):
 
 def includeme(config):
     """security-related configuration"""
-    auth_secret = s3
+    auth_secret = os.environ.get('AUTH_SECRET', '')
     authn_policy = AuthTktAuthenticationPolicy(
         secret=auth_secret,
         hashalg='sha512'
