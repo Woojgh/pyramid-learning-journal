@@ -26,7 +26,7 @@ pyramid-mako==1.0.2
 pyramid-tm==2.1
 pytest==3.1.1
 pytest-cov==2.5.1
--e git+https://github.com/Woojgh/pyramid-learning-journal.git@9542d8da615c7539a691d1581aa29c6610bf70ba#egg=python_learning_journal&subdirectory=python_learning_journal
+-e git+https://github.com/Woojgh/pyramid-learning-journal.git@d5ce552bdcf723097d347e4381a7418cd32e03aa#egg=python_learning_journal&subdirectory=python_learning_journal
 repoze.lru==0.6
 simplegeneric==0.8.1
 six==1.10.0
