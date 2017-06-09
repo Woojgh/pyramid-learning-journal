@@ -5,7 +5,7 @@ from pyramid.security import Everyone, Authenticated
 from pyramid.security import Allow
 from passlib.apps import custom_app_context as context
 from pyramid.session import SignedCookieSessionFactory
-
+from boto.s3.connection import S3Connection
 
 class MyRoot(object):
 
@@ -40,6 +40,7 @@ def includeme(config):
     config.set_authorization_policy(authz_policy)
     # config.set_default_permission('view')
     config.set_root_factory(MyRoot)
+    s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
     session_secret = os.environ.get('SESSION_SECRET', '')
     session_factory = SignedCookieSessionFactory(session_secret)
     config.set_session_factory(session_factory)

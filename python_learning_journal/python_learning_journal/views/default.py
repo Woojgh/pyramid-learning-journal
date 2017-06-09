@@ -98,7 +98,7 @@ def login(request):
         if check_credentials(username, password):
             headers = remember(request, username)
             return HTTPFound(
-                location=request.route_url('list_view'), 
+                location=request.route_url('list_view'),
                 headers=headers
             )
 
