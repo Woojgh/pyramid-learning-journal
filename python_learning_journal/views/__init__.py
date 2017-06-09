@@ -4,7 +4,6 @@ from .default import create_view
 from .default import update_view
 
 
-
 def includeme(config):
     """List of views to include for the configurator object."""
     config.add_view(list_view, route_name="list_view")
