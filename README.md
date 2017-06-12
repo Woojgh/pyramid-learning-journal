@@ -1,4 +1,6 @@
-# Expense Tracker
+# JourNull
+
+Link to deployed webpage: https://safe-eyrie-74550.herokuapp.com
 
 A simple Pyramid app for listing and displaying expenses.
 
