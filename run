@@ -1,4 +1,9 @@
 #!/bin/bash
 set -e
+<<<<<<< HEAD
+=======
+cd python_learning_journal
+>>>>>>> 66d6279cb4ff0f237abde935505082dd03c5d65c
 python setup.py develop
+initializedb production.ini
 python runapp.py

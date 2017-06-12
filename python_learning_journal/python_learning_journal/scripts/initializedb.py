@@ -16,6 +16,7 @@ from ..models import (
     get_session_factory,
     get_tm_session,
     )
+
 from python_learning_journal.models import Entry
 from python_learning_journal.data.data import JOURNAL_ENTRIES
 

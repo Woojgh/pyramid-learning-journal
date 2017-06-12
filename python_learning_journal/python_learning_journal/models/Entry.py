@@ -20,5 +20,5 @@ class Entry(Base):
         output['id'] = self.id
         output['title'] = self.title
         output['body'] = self.body
-        output['creation_date'] = self.creation_date
+        output['creation_date'] = self.creation_date.strftime('%B %d, %Y')
         return output

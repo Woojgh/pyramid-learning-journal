@@ -28,7 +28,7 @@ tests_require = [
 ]
 
 setup(
-    name='python-learning-journal',
+    name='python_learning_journal',
     version='0.0',
     description='Python Learning Journal',
     long_description=README + '\n\n' + CHANGES,

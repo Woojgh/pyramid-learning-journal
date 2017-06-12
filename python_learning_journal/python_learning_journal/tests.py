@@ -85,6 +85,7 @@ JOURNAL_ENTRIES_DICT = [
 ]
 
 
+
 @pytest.fixture
 def testapp():
     """Create an instance of our app for testing."""

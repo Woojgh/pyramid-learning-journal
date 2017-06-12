@@ -14,7 +14,7 @@ from python_learning_journal.security import check_credentials
 def list_view(request):
     """View for the main listing page."""
     journal_entries = request.dbsession.query(Entry).all()
-    return {"journal_entries": journal_entries}
+    return {"journal_entries": journal_entries, 'authenticated': request.authenticated_userid}
 
 
 @view_config(route_name='detail_view', renderer='../templates/detail.jinja2', require_csrf=False)
@@ -115,5 +115,6 @@ def logout(request):
 
 @view_config(route_name='api_journal_list', renderer='json')
 def api_list(request):
-    entries = request.dbsession.query(Entry).all()
+    query = request.dbsession.query(Entry).all()
+    entries = [entry.to_json() for entry in query]
     return {'entries': entries}
