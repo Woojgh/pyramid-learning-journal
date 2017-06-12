@@ -1,4 +1,4 @@
-JOURNAL_ENTRIES_DICT = [
+JOURNAL_ENTRIES = [
     {
         'id': 13,
         'title': 'James Salamonsen Day 13',
