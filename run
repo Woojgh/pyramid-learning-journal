@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
+
 cd python_learning_journal
+
 python setup.py develop
 initializedb production.ini
 python runapp.py

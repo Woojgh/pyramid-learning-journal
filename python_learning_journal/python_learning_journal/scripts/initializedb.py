@@ -16,9 +16,9 @@ from ..models import (
     get_session_factory,
     get_tm_session,
     )
-from ..models import Entry
-from ..data.data import JOURNAL_ENTRIES_DICT
-from datetime import datetime
+
+from python_learning_journal.models import Entry
+from python_learning_journal.data.data import JOURNAL_ENTRIES
 
 
 def usage(argv):
@@ -46,11 +46,12 @@ def main(argv=sys.argv):
         dbsession = get_tm_session(session_factory, transaction.manager)
         entries = []
 
-        for entry in JOURNAL_ENTRIES_DICT:
+        for item in JOURNAL_ENTRIES:
             new_entry = Entry(
-                title=entry['title'],
-                body=entry['body'],
-                creation_date=datetime.now(),
+                title=item['title'],
+                body=item['body'],
+                creation_date=datetime.datetime.now()
             )
             entries.append(new_entry)
+
         dbsession.add_all(entries)
