@@ -27,9 +27,11 @@ A simple Pyramid app for listing and displaying expenses.
 
 - `cd` into the next `pyramid-learning-journal` directory. It should be at the same level of `setup.py`
 
-- `pip install` this package as well as the `testing` set of extras into your virtual environment.
+- `pip install -e .` this package as well as the `[testing]` set of extras into your virtual environment.
 
-- `$ pserve development.ini --reload` to serve the application on `http://localhost:6543`
+- 'initializedb development.ini' to create the database locally.
+
+- `$ pserve development.ini --reload` to serve the application on `http://localhost:6543`.
 
 ## To Test
 
