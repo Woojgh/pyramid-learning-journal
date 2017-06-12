@@ -1,4 +1,4 @@
-# Expense Tracker
+# JourNull
 
 A simple Pyramid app for listing and displaying expenses.
 
