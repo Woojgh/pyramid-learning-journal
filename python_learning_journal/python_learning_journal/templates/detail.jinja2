@@ -1,0 +1,11 @@
+{% extends "layout.jinja2" %}
+{% block body %}
+    <form method="POST">
+        <button type="submit">Edit Journal Entry</button>
+    </form>
+    <article>
+        <p>id: {{ entry.id }}</p>
+        <h1>{{ entry.title }}</h1><p>{{ entry.creation_date }}</p>
+        <p>{{ entry.body }}</p>
+    </article>
+{% endblock %}
