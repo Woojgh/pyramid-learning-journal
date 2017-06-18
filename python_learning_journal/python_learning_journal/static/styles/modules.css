@@ -8,7 +8,7 @@
 #aboutpage {
   background-color: #211702;
   border-radius: 10px;
-  font-size: 5.5vw;
+  font-size: 3vw;
   padding: 2vw 1vw 1vw 1vw;
 }
 
@@ -21,14 +21,34 @@
   list-style: none;
 }
 
-
-#dna-gif {
-  height:10vw;
-  width:7vw;
+.entry-list {
   text-decoration: none;
-  -webkit-transform: rotate(90deg);
+  font-size: 2vw;
+  display:block;
+  margin-left: 2vw;
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
 }
+
+.entry-title {
+  font-size: 2vw;
+  float:left;
+  margin-left: 2vw;
+}
+
+.entry-body {
+  font-size: 1.5vw;
+  float:left;
+  width:100%;
+}
+
+
 .heading-group-h1 {
+
   /*padding: 0 0 .2em 1em;*/
 }
 #heat-cont {
@@ -46,7 +66,7 @@
 }
 
 .tab-content {
-  /*background-color: #211702;*/
+  background-color: #211702;
   border-radius: 5px;
   /*padding:9px 20px;*/
   text-align: center;
@@ -62,6 +82,8 @@
   text-align: center;
   display: inline;
 }
+
+
 
 #contact {
 
@@ -112,7 +134,7 @@
 .main-nav ul li {
     border-bottom: none;
     display: inline;
-    font-size: 7vw;
+    font-size: 3vw;
 }
 
 .nav:hover ul {
