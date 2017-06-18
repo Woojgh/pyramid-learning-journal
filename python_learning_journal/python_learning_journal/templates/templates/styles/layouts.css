@@ -1,4 +1,4 @@
-.pull-left {
+pull-left {
   float: left;
 }
 
@@ -12,6 +12,7 @@
   clear: both;
 }
 
-.field label {
-    font-size: 50px;
+.heading-group-h1 {
+  max-width: 80%;
 }
+

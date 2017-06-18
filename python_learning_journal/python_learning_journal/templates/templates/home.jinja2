@@ -1,0 +1,18 @@
+{% extends "layout.jinja2" %}
+{% block links %}
+    {% if not authenticated %}
+          <li class="tab"><a href="/login" class="icon-home"> Login</a></li>
+    {% endif %}
+    {% if authenticated %} 
+        <li class="tab"><a href="/logout"> Logout</a></li>
+    {% endif %}
+{% endblock %}
+{% block body %}
+    <div id="home-pic">
+    <img src="static/images/HIV.jpg"/>
+    </div>
+    <div class="homestatement">
+      <p>HIV is one of the most deadliest virus in human history. According to WHO by the end of 2017 105 million people will have died since HIV appeared in 1959. It is our hope that this can help in the fight against HIV.</p>   
+    </div>
+    
+{% endblock %}

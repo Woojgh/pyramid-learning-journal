@@ -1,0 +1,18 @@
+body {
+  background-color:black;
+  color:cornsilk;
+}
+
+h1 {
+    font-size: 2vw;
+  text-align:center;
+}
+
+h2 {
+    font-size: 1vw;
+}
+
+main {
+  margin:auto;
+  width:90%;
+}
