@@ -8,9 +8,9 @@
     {% endif %}     
     {% if journal_entries %}
         {% for entry in journal_entries %}
-            <article>
+            <article class="entry-list">
                 <hr/>
-                <h3><a href="{{ request.route_url('detail_view', id=entry.id) }}">{{ entry.title }}</a></h3>
+                <p><a href="{{ request.route_url('detail_view', id=entry.id) }}">{{ entry.title }}</a></p>
                 <p>Created <strong>{{ entry.creation_date }}</strong></p>
             </article>
         {% endfor %}
