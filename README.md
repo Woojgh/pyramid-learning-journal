@@ -1,4 +1,4 @@
-# Expense Tracker
+# Python Learning Journal
 
 A simple Pyramid app for listing and displaying expenses.
 
