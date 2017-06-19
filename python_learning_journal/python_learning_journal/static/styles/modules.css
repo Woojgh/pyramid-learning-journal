@@ -46,6 +46,16 @@
   width:100%;
 }
 
+.new-entry {
+  background-color: #211702;
+  font-size: 1.5vw;
+  float:left;
+  width:100%;
+}
+
+.new-entry ul li {
+  list-style:none;
+}
 
 .heading-group-h1 {
 
