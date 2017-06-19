@@ -47,7 +47,9 @@
 }
 
 .new-entry {
-  font-size: 2.5vw;
+  background-color: #211702;
+  color: cornsilk;
+  font-size: 3.5vw;
   float:left;
   width:100%;
 }
