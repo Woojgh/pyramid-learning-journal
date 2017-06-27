@@ -23,7 +23,7 @@
 {% block create %}
 {% if authenticated %}
     <input type="hidden" name="csrf_token" value="{{ request.session.get_csrf_token() }}" />
-    <p class="new-entry">Create New Journal Entry</p>
+    <p>Create New Journal Entry</p>
     <form method="POST">
         <ul>
             <li>

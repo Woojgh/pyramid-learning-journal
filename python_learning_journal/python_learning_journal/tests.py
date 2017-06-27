@@ -162,7 +162,7 @@ def test_layout(testapp):
     """Assert that layout file contains correct data."""
     response = testapp.get('/', status=200)
     html = response.html
-    assert 'JourNull' in html.find('h1').text
+    assert 'JourNull' in html.find('p').text
 
 
 def test_root_contents(testapp):
