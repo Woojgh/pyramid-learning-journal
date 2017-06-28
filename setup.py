@@ -3,9 +3,9 @@ import os
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, 'README.txt')) as f:
+with open(os.path.join(here, 'python_learning_journal/README.txt')) as f:
     README = f.read()
-with open(os.path.join(here, 'CHANGES.txt')) as f:
+with open(os.path.join(here, 'python_learning_journal/CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
@@ -25,7 +25,6 @@ tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest',
     'pytest-cov',
-    'tox'
 ]
 
 setup(
