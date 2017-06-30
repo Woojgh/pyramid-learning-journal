@@ -40,7 +40,8 @@ def detail_view(request):
     return {}
 
 
-@view_config(route_name='create_view', renderer='../templates/create.jinja2', permission='secret')
+
+@view_config(route_name='create_view', renderer='../templates/create.jinja2', permission='secret', require_csrf=False)
 def create_view(request):
     """View for new listing route."""
     if request.method == "POST":
