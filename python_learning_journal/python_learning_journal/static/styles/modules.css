@@ -51,6 +51,17 @@
 }
 
 .new-entry {
+  background-color: #211702;
+  color: cornsilk;
+  font-size: 3.5vw;
+  float:left;
+  width:100%;
+}
+
+.new-entry ul li {
+  list-style:none;
+}
+
 
   font-size: 3.5vw;
   float:left;
