@@ -1,0 +1,21 @@
+{% extends "layout.jinja2" %}
+{% block top %}
+            {% if authenticated %} 
+            <li class="tab"><a href="/journal/new-entry">New Entry</a></li>
+            <li class="tab"><a href="/logout">Logout</a></li>
+    {% else %}
+    <li class="tab"><a href="/login" class="icon-home"> Login</a></li>
+    {% endif %}
+
+    {% if journal_entries %}
+        {% for entry in journal_entries %}
+            <article class="entry-list">
+                <hr/>
+                <p><a href="{{ request.route_url('detail_view', id=entry.id) }}">{{ entry.title }}</a></p>
+                <p>Created <strong>{{ entry.creation_date }}</strong></p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p>You have no journal entries to list.</p>
+    {% endif %}
+{% endblock %}
