@@ -3,7 +3,7 @@ from pyramid.response import Response
 import pytest
 
 
-JOURNAL_ENTRIES_DICT = [
+JOURNAL_ENTRIES = [
     {
         'id': 13,
         'title': 'James Salamonsen Day 13',
@@ -149,7 +149,7 @@ def test_update_view_returns_dict_given_request(update_view_response):
 
 def test_list_view_returns_proper_len_of_content(list_view_response):
     """Assert list view returns proper length of content."""
-    assert len(list_view_response.get('journal_entries')) == len(JOURNAL_ENTRIES_DICT)
+    assert len(list_view_response.get('journal_entries')) == len(JOURNAL_ENTRIES)
 
 
 def test_detail_view_contains_journal_entry_attrs(detail_view_response):
@@ -169,4 +169,4 @@ def test_root_contents(testapp):
     """Assert that listing view contais the correct ammount of article tags."""
     response = testapp.get('/', status=200)
     html = response.html
-    assert len(JOURNAL_ENTRIES_DICT) == len(html.findAll("article"))
+    assert len(JOURNAL_ENTRIES) == len(html.findAll("article"))
